@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>M-art</title>
+</head>
+<body class="container">
+    <form name="control" class="control"  style="border-right: 1px solid #ccc;">
+        <label class="containerRadio">
+            Draw
+            <input type="radio" value="draw" name="action">
+            <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">
+            Remove
+            <input type="radio" value="remove" name="action">
+            <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">
+            Text
+            <input type="radio" value="text" name="action">
+            <span class="checkmark"></span>
+        </label>
+
+        <label class="labelStyle">Width <input type="range" class="slider" min="1" max="30" value="5" name="width"></label>
+        <label class="labelStyle">Colour: <input type="color" id="colour" name="colour"></label>
+        
+        
+        <label class="labelStyle">Text: <textarea type="text" id="text" name="text"></textarea></label>
+        <button type="button" id="save">Add Text</button>
+        <br>
+        
+        <label>
+            <input type="file" id="image" name="image" hidden>
+            <button type="button" style="width: 100%;" onclick="document.getElementById('image').click()">Upload Photo</button>
+        </label>
+
+
+        <br>
+
+        <label class="containerRadio">
+            Free
+            <input type="radio" value="free" name="drawType" checked>
+            <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">
+            Line
+            <input type="radio" value="line" name="drawType">
+            <span class="checkmark"></span>
+        </label>
+        <label class="containerRadio">
+            Rectangle
+            <input type="radio" value="rect" name="drawType">
+            <span class="checkmark"></span>
+        </label>
+
+    </form>
+
+    <div class="can"> 
+        <canvas id="canImg" width="600" height="600"></canvas>
+        <span class="pointer">|</span>
+    </div>
+
+    <form name="filter" class="control" style="border-left: 1px solid #ccc;">
+        <label class="labelStyle">Blur <input type="range" class="slider" min="0" max="20" value="0" name="blur"></label>
+        <label class="labelStyle">Brightness <input type="range" class="slider" min="0" max="500" value="100" name="brightness"></label>
+        <label class="labelStyle">Contrast <input type="range" class="slider" min="0" max="500" value="100" name="contrast"></label>
+        <label class="labelStyle">B & W <input type="range" class="slider" min="0" max="100" value="0" name="grayscale"></label>
+        <label class="labelStyle">Hue <input type="range" class="slider" min="0" max="360" value="0" name="hueRotate"></label>
+        <label class="labelStyle">Invert <input type="range" class="slider" min="0" max="100" value="0" name="invert"></label>
+        <label class="labelStyle">Saturate <input type="range" class="slider" min="0" max="500" value="100" name="saturate"></label>
+        <label class="labelStyle">Opacity <input type="range" class="slider" min="0" max="100" value="100" name="opacity"></label>
+        <label class="labelStyle">Sepia <input type="range" class="slider" min="0" max="100" value="0" name="sepia"></label>
+    </form>
+
+    <script src="js.js"></script>
+</body>
+</html>
